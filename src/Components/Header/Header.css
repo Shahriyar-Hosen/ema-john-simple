@@ -1,3 +1,16 @@
 .header {
   background: #1c2b35;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 36px;
 }
