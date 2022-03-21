@@ -14,3 +14,7 @@
   font-size: 17px;
   margin-right: 36px;
 }
+
+.header a:hover {
+  color: orange;
+}
