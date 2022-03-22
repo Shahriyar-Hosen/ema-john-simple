@@ -4,8 +4,38 @@
 }
 
 .products-container {
+  width: 1020px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
-  
 }
+
+/* 
+@media screen and (max-width: 1020) and (min-width: 900px){
+  .products-container {
+    width: 1020px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+  }
+}
+@media screen and (max-width: 900) and (min-width: 501px){
+  .products-container {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+  }
+}
+@media screen and (max-width: 500) and (min-width: 300px) {
+  .products-container {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 45px;
+  }
+} */
