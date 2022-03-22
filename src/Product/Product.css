@@ -38,6 +38,12 @@
   font-weight: 400;
   font-size: 15px;
   color: #0e161a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-cart p {
+  margin-right: 5px;
 }
 
 .btn-cart:hover {
