@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import useProducts from "../../hooks/useProducts";
 
 const Orders = () => {
-    return (
-        <div>
-            <h1>This is Orders</h1>
-        </div>
-    );
+  const [products] = useProducts();
+  return (
+    <div>
+      <h1>This is Orders: {products.length}</h1>
+    </div>
+  );
 };
 
 export default Orders;
