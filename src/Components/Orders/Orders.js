@@ -9,7 +9,8 @@ const Orders = () => {
   const [cart, setCart] = useCart(products);
 
   const handleRemoveProduct = (product) => {
-    console.log(product);
+    const rest = cart.filter((pd) => pd.id !== product.id);
+    setCart(rest)
   };
   return (
     <div className="shop-container">
