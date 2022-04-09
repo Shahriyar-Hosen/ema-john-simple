@@ -9,15 +9,15 @@ const SignUp = () => {
         <form>
           <div className="input-group">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="" />
+            <input type="email" name="email" id="" required/>
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" password="email" id="" />
+            <input type="password" password="email" id="" required/>
           </div>
           <div className="input-group">
             <label htmlFor="confirm-password">Confirm Password</label>
-            <input type="password" password="confirm-password" id="" />
+            <input type="password" password="confirm-password" id="" required/>
           </div>
         </form>
         <div className="form-submit">
