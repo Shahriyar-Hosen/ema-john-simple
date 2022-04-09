@@ -1,24 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../Firebase/Firebase.init";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  
+
+  const [createUserWithEmailAndPassword, user] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleEmailValue = (event) => {
-    console.log(event.target.value);
     setEmail(event.target.value);
   };
   const handlePasswordValue = (event) => {
-    console.log(event.target.value);
     setPassword(event.target.value);
   };
   const handleConfirmPasswordValue = (event) => {
-    console.log(event.target.value);
     setConfirmPassword(event.target.value);
   };
+
+    if (user) {
+        navigate("/");
+    }
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -26,14 +34,20 @@ const SignUp = () => {
       setError("your two passwords don't match");
       return;
     }
-    
+
+    if (password.length < 6) {
+      setError("password must 6 characters or longer");
+      return;
+    }
+
+    createUserWithEmailAndPassword(email, password);
   };
 
   return (
     <div className="form-container">
       <div>
         <h4 className="form-title">Sign Up</h4>
-        <form onClick={handleCreateUser}>
+        <form onSubmit={handleCreateUser}>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
@@ -64,9 +78,7 @@ const SignUp = () => {
               required
             />
             <p style={{ color: "red" }}>{error}</p>
-            <div className="form-submit">
-              <input type="submit" value="Sign Up" />
-            </div>
+            <input className="form-submit" type="submit" value="Sign Up" />
           </div>
         </form>
 

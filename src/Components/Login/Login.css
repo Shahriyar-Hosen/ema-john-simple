@@ -38,9 +38,10 @@
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 24px;
+  padding-left: 5px;
 }
 
-.form-submit input {
+.form-submit {
   background: rgba(255, 153, 0, 0.3);
   width: 415px;
   height: 55px;

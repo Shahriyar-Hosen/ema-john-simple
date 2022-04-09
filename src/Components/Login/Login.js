@@ -10,16 +10,14 @@ const Login = () => {
         <form>
           <div className="input-group">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="" required/>
+            <input type="email" name="email" id="" required />
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" password="email" id="" required/>
+            <input type="password" password="email" id="" required />
           </div>
         </form>
-        <div className="form-submit">
-          <input type="submit" value="Login" />
-        </div>
+          <input className="form-submit" type="submit" value="Login" />
         <p>
           New to Ema-john?
           <Link className="form-link" to="/signup">
