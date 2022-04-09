@@ -1,11 +1,31 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
-    return (
-        <div>
-            <h1>This is Login</h1>
+  return (
+    <div className="form-container">
+      <div>
+        <h4 className="form-title">This is Login</h4>
+        <form>
+          <div className="input-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="" />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" password="email" id="" />
+          </div>
+        </form>
+        <div className="form-submit">
+          <input type="submit" value="Login" />
         </div>
-    );
+        <p>
+          New to Ema-john? <Link className="form-link" to="/signup">Create New Account</Link>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Login;
