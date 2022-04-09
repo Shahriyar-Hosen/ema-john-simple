@@ -9,15 +9,16 @@
   justify-content: center;
 }
 
-.form-container p{
-    text-align: center;
-    margin-top: 10px;
+.form-container p {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .form-title {
   font-weight: 400;
   font-size: 35px;
   color: #2a414f;
+  text-align: center;
 }
 
 .input-group {
@@ -46,9 +47,47 @@
   border: none;
   font-size: 20px;
   margin-top: 24px;
+  cursor: pointer;
+}
+
+.form-submit input:hover {
+  background: rgba(255, 153, 0, 0.5);
 }
 
 .form-link {
   color: #ff9900;
   text-decoration: none;
+}
+
+.or-line {
+  width: 354px;
+  height: 20px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.or-line hr {
+  width: 145px;
+  border: 1px solid rgba(149, 160, 167, 1);
+}
+
+.or-line span {
+  color: #95a0a7;
+  font-weight: 400;
+  font-size: 17px;
+  margin: 0 25px;
+}
+
+.continue-google {
+  width: 415px;
+  height: 55px;
+  background-color: #ffffff;
+  border: 1px solid rgba(149, 160, 167, 1);
+  border-radius: 5px;
+  margin-bottom: 45px;
+  color: #2a414f;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: pointer;
 }
