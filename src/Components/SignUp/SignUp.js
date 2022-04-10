@@ -9,7 +9,6 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  
 
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
@@ -24,9 +23,9 @@ const SignUp = () => {
     setConfirmPassword(event.target.value);
   };
 
-    if (user) {
-        navigate("/");
-    }
+  if (user) {
+    navigate("/shop");
+  }
 
   const handleCreateUser = (event) => {
     event.preventDefault();
