@@ -1,10 +1,18 @@
 import React, { useState } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../Firebase/Firebase.init";
 import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [
+    signInWithEmailAndPassword, 
+    user, 
+    loading, 
+    error
+  ] = useSignInWithEmailAndPassword(auth);
 
   const handleEmailValue = (event) => {
     setEmail(event.target.value);
@@ -14,6 +22,7 @@ const Login = () => {
   };
   const handleUserSignIn = (event) => {
     event.preventDefault();
+    signInWithEmailAndPassword(email, password);
   };
   return (
     <div className="form-container">
