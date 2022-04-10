@@ -1,26 +1,27 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/Firebase.init";
 
 const Shipment = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [user, error] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
 
-  const handleEmailValue = (event) => {
-    setEmail(event.target.value);
-  };
   const handleNameValue = (event) => {
-    setEmail(event.target.value);
+    setName(event.target.value);
   };
   const handleAddressValue = (event) => {
-    setPassword(event.target.value);
+    setAddress(event.target.value);
   };
   const handlePhoneValue = (event) => {
-    setConfirmPassword(event.target.value);
+    setPhone(event.target.value);
   };
 
   const handleCreateUser = (event) => {
     event.preventDefault();
+    const shipping = { name, address, phone };
+    console.log(shipping);
   };
 
   return (
@@ -41,7 +42,8 @@ const Shipment = () => {
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
-              onBlur={handleEmailValue}
+              value={user?.email}
+              readOnly
               type="email"
               name="email"
               id=""
