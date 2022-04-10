@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailValue = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordValue = (event) => {
+    setPassword(event.target.value);
+  };
   return (
     <div className="form-container">
       <div>
@@ -10,14 +19,26 @@ const Login = () => {
         <form>
           <div className="input-group">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="" required />
+            <input
+              onBlur={handleEmailValue}
+              type="email"
+              name="email"
+              id=""
+              required
+            />
           </div>
           <div className="input-group">
             <label htmlFor="password">Password</label>
-            <input type="password" password="email" id="" required />
+            <input
+              onBlur={handlePasswordValue}
+              type="password"
+              password="email"
+              id=""
+              required
+            />
           </div>
         </form>
-          <input className="form-submit" type="submit" value="Login" />
+        <input className="form-submit" type="submit" value="Login" />
         <p>
           New to Ema-john?
           <Link className="form-link" to="/signup">
