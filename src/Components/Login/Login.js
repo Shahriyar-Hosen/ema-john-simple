@@ -70,9 +70,12 @@ const Login = () => {
           <hr />
         </div>
         <div>
-          <button className="continue-google">
-            <img src="../../images/google.png" alt="" /> Continue with Google
-          </button>
+          <div className="continue-google">
+            <button>
+            <img src="https://i.ibb.co/5BHNVLD/google.png" alt="" /> 
+            <p>Continue with Google</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>

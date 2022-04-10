@@ -92,4 +92,21 @@
   font-weight: 400;
   font-size: 17px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.continue-google button{
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.continue-google button p{
+ margin-left: 10px;
+ color: #2a414f;
+ font-size: 15px;
+ cursor: pointer;
 }

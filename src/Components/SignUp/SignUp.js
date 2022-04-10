@@ -94,7 +94,7 @@ const SignUp = () => {
         </div>
         <div>
           <button className="continue-google">
-            <img src="../../images/google.png" alt="" /> Continue with Google
+            <img src="https://i.ibb.co/5BHNVLD/google.png" alt="" /> Continue with Google
           </button>
         </div>
       </div>
