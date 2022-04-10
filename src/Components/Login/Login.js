@@ -12,11 +12,14 @@ const Login = () => {
   const handlePasswordValue = (event) => {
     setPassword(event.target.value);
   };
+  const handleUserSignIn = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="form-container">
       <div>
         <h4 className="form-title">Login</h4>
-        <form>
+        <form onSubmit={handleUserSignIn}>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
