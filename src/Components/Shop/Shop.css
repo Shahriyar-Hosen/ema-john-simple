@@ -13,6 +13,12 @@
   margin-bottom: 100px;
 }
 
+.pagination button {
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid orange;
+}
+
 .cart-container {
   background: rgba(255, 153, 0, 0.3);
 }
