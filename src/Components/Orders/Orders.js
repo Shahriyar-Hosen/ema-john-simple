@@ -1,15 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
-import useProducts from "../../hooks/useProducts";
 import { removeFromDb } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import './Orders.css';
 
 const Orders = () => {
-  const [products] = useProducts();
-  const [cart, setCart] = useCart(products);
+  const [cart, setCart] = useCart();
   const navigate = useNavigate();
 
   const handleRemoveProduct = (product) => {
