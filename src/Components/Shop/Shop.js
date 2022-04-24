@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
 import { addToDb, getStoreCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
@@ -8,10 +7,19 @@ import "./Shop.css";
 
 const Shop = () => {
   const [cart, setCart] = useState([]);
-  const [products] = useProducts();
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
-  const [size, setSize] = useState(10);
+  const [size, setSize] = useState(15);
+  const [products, setProducts] = useState([]);
+
+  // Read / Get Method - Read by user name /  Search query
+
+  useEffect(() => {
+    const url = `http://localhost:5000/product/?page=${page}&size=${size}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [page, size]);
 
   // Pagination
   useEffect(() => {
@@ -60,7 +68,7 @@ const Shop = () => {
         <div className="products-container">
           {products.map((product) => (
             <Product
-              key={product.id}
+              key={product._id}
               product={product}
               handleAddToCart={handleAddToCart}
             ></Product>
@@ -71,6 +79,7 @@ const Shop = () => {
         <div className="pagination">
           {[...Array(pageCount).keys()].map((number) => (
             <button
+              key={number}
               onClick={() => setPage(number)}
               className={page === number ? "selected" : ""}
             >
@@ -78,15 +87,15 @@ const Shop = () => {
             </button>
           ))}
 
-           {/* Page size  */}
-        <select onChange={(e) => setSize(e.target.value)}>
-          <option value="5">5</option>
-          <option value="10" selected>10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-        </select>
+          {/* Page size  */}
+          <select onChange={(e) => setSize(e.target.value)}>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+          </select>
         </div>
-
       </div>
 
       <div className="cart-container">
