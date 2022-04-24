@@ -13,7 +13,7 @@ const Shop = () => {
   const [size, setSize] = useState(15);
   const [products, setProducts] = useState([]);
 
-  // Read / Get Method - Read by user name /  Search query
+  // Read / Get Method - Read by product name /  Search query
 
   useEffect(() => {
     const url = `http://localhost:5000/product/?page=${page}&size=${size}`;
@@ -34,7 +34,6 @@ const Shop = () => {
   }, []);
 
   const handleAddToCart = (selectedProduct) => {
-    console.log(cart);
     let newCart = [];
     const exists = cart.find((product) => product._id === selectedProduct._id);
     if (!exists) {
