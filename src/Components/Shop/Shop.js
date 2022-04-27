@@ -16,7 +16,7 @@ const Shop = () => {
   // Read / Get Method - Read by product name /  Search query
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/?page=${page}&size=${size}`;
+    const url = `https://obscure-gorge-14875.herokuapp.com/product/?page=${page}&size=${size}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -24,7 +24,7 @@ const Shop = () => {
 
   // Pagination
   useEffect(() => {
-    fetch("http://localhost:5000/productCount")
+    fetch("https://obscure-gorge-14875.herokuapp.com/productCount")
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
