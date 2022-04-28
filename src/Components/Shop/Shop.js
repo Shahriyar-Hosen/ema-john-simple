@@ -28,10 +28,10 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
-        const pages = Math.ceil(count / 10);
+        const pages = Math.ceil(count / size);
         setPageCount(pages);
       });
-  }, []);
+  }, [page, size]);
 
   const handleAddToCart = (selectedProduct) => {
     let newCart = [];
