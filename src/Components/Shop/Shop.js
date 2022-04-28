@@ -16,7 +16,7 @@ const Shop = () => {
   // Read / Get Method - Read by product name /  Search query
 
   useEffect(() => {
-    const url = `https://fierce-lake-08822.herokuapp.com/product/?page=${page}&size=${size}`;
+    const url = `https://fierce-lake-08822.herokuapp.com/product?page=${page}&size=${size}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
