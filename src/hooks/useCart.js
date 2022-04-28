@@ -10,7 +10,7 @@ const useCart = () => {
     const savedCart = [];
     const keys = Object.keys(storedCart);
 
-    fetch("https://obscure-gorge-14875.herokuapp.com/productByKeys", {
+    fetch("https://fierce-lake-08822.herokuapp.com/productByKeys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
