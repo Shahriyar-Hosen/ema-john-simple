@@ -13,11 +13,11 @@
   border-radius: 8px;
 }
 .product-info {
-  margin-top: 7px;
   margin: 14px;
+  margin-top: 7px;
 }
 .product-name {
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 21px;
